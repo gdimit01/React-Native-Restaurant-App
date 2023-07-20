@@ -6,7 +6,7 @@ This is a simple restaurant app that lets you browse dynamically through a list 
 
 This handles the functions the application
 
-#src
+# src
 
 The sourcecode has folders: features, restaurants, components and screens.
 
