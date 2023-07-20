@@ -18,7 +18,7 @@ const SearchView = styled.View`
 const ListView = styled.View`
   flex: 1;
   padding: 16px;
-  background-color: blue;
+  background-color: #FFE2EF;
   justify-content: center;
 `;
 
