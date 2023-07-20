@@ -6,7 +6,7 @@ import { SafeAreaView, StatusBar } from "react-native";
 
 const StyledSafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight}pt;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
 const SearchView = styled.View`
