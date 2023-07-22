@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../restaurant-info-card-component";
-import { SafeAreaView, StatusBar, FlatList, View, Text } from "react-native";
+import { SafeAreaView, StatusBar, FlatList } from "react-native";
 import { Card } from "react-native-paper";
 import { Spacer } from "../spacer/spacer.component";
+import { SafeArea } from "../../../../components/utils/safe-area.component";
 
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
