@@ -1,7 +1,7 @@
 import { camelCase } from "react-native-svg/lib/typescript/xml";
 import { mocks } from "./mock";
 import camelize from "camelize";
-const restaurantRequest = (location = "51.219448,4.402464") => {
+export const restaurantRequest = (location = "51.219448,4.402464") => {
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
     if (!mock) {
@@ -11,16 +11,14 @@ const restaurantRequest = (location = "51.219448,4.402464") => {
   });
 };
 
-const restaurantTransform = (resulter) => {
-  const newResult = camelize(result);
-  //   newResult.someExtraProperty = 'new'
-  return newResult;
-};
-restaurantRequest()
-  .then(restaurantTransform)
-  .then((transformedResponse) => {
-    console.log(transformedResponse);
-  })
-  .catch((err) => {
-    console.log(error);
+export const restaurantTransform = ({ result = [] }) => {
+  const mappedResults = results.map((restaurant) => {
+    return {
+      ...restaurant,
+      isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
+      isClosedTemporary: restaurant.business_status === "CLOSED_TEMPORARILY",
+    };
   });
+  //   newResult.someExtraProperty = 'new'
+  return camelize(mappedResults);
+};
